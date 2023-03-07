@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homepage</title>
+    <script src="script.js"></script>
+  </head>
+<body>
+
+<!-------------------------------------------navbar----------------------------------------------------------------->
+  <header>
+    <nav>
+        <a href="#" class="logo">Ja<span>pan</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="meal.html">Food</a>
+        </div>
+    </nav>
+  </header>
+
+  <div class="home">
+    <h1> Welcome to 日本 (Japan)</h1>
+  </div>
+<!------------------------------------------------------------------------------------------------------------------>
+
+
+<!----------------------------About Japan------------------------------------------------------------------------->
+<section class="aboutjapan">
+  <div class="main">
+  <img src ="../oopjapanimg/Japanflag.jpg">
+  <div class ="aboutjapan-text">
+      <h2>About <span>Japan</span></h2>
+      <p>Japan (Japanese: 日本, Nippon or Nihon,[nb 1] and formally 日本国, Nihonkoku)[nb 2] is an island country in East Asia. It is situated in the northwest Pacific Ocean and is bordered on the west by the Sea of Japan, extending from the Sea of Okhotsk in the north toward the East China Sea, Philippine Sea, and Taiwan in the south.</p>
+      </div>
+  </div> 
+</section>
+
+<!------------------------------------------------------------------------------------------------------------------>
+
+
+<!----------------------------Japan attraction------------------------------------------------------------------------->
+<section class="japanplace">
+  <div class="japanplacetitle">
+    <h2>Top <span>6</span> Must visit in <span>Japan</span></h2>
+  </div>
+
+<div class ="placebox">
+  <div class="placecard">
+    <img src="../oopjapanimg/tokyo.png ">
+    <h5>Tokyo</h5>
+    <br>
+    <div class="pra">
+      <p>Tokyo is the administrative, cultural, financial, commercial, and educational centre of Japan and the focus of an extensive urban complex that includes Kawasaki and Yokohama. Attractions include the Imperial Palace, encircled by stone-walled moats and broad gardens, and numerous temples and shrines.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class ="placebox">
+  <div class="placecard">
+    <img src="../oopjapanimg/kyoto.png">
+    <h5>Kyoto</h5>
+    <br>
+    <div class="pra">
+      <p>Kyoto, located in the Kansai region of Japan, is the country's seventh largest city, with a population of 1.4 million people. Steeped in history, Kyoto is home to roughly one quarter of Japan's national treasures, countless shrines and temples, and seventeen sites recognized by UNESCO as World Heritage Sites.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class ="placebox">
+  <div class="placecard">
+    <img src="../oopjapanimg/osaka.png">
+    <h5>Osaka</h5>
+    <br>
+    <div class="pra">
+      <p>Osaka is a charming, relaxed city best known for its food, fun and nightlife—with some history and culture peeking through. Osaka is only a short shinkansen ride from Tokyo, but has a very different personality to Japan's capital city.</p>
+    </div>
+  </div>
+</div>
+
+<div class ="placebox">
+  <div class="placecard">
+    <img src="../oopjapanimg/akiba.png">
+    <h5>Akihabara</h5>
+    <br>
+    <div class="pra">
+      <p>Akihabara is Japan's most famous neighborhood for all things electronics, anime, and otaku culture. Also known as Electric Town or Akiba, various large-scale electronic retailers, as well as shops selling parts and gadgets gather on the main Chuo-dori Street.</p>
+    </div>
+  </div>
+</div>
+
+<div class ="placebox">
+  <div class="placecard">
+    <img src="../oopjapanimg/fuji.png">
+    <h5>Mount Fuji</h5>
+    <br>
+    <div class="pra">
+      <p>Rising to 12,388 feet (3,776 metres), Mount Fuji is the tallest mountain in Japan and is known for its graceful conical form. It is the country's sacred symbol, and temples and shrines are located around and on the volcano.</p>
+    </div>
+  </div>
+</div>
+
+<div class ="placebox">
+  <div class="placecard">
+    <img src="../oopjapanimg/sap.png">
+    <h5>Sapporo</h5>
+    <br>
+    <div class="pra">
+      <p>Sapporo (札幌市, Sapporo-shi, IPA: [sapːoɾo ɕi]) (Ainu: サッ・ポロ・ペッ, romanized: Satporopet, lit. 'Dry, Great River') is a city in Japan. It is the largest city north of Tokyo and the largest city on Hokkaido, the northernmost main island of the country. It ranks as the fifth most populous city in Japan.</p>
+    </div>
+  </div>
+</div>
+
+
+</section>
+
+
+<!------------------------------------------------------------------------------------------------------------------>
+
+
+<!---------------------------Displaying Weather--------------------------------------------------------->
+  <div class="content1">  
+    <div class="container">
+      <p class="white">Select a city in Japan to get the current weather:</p>
+      <form>
+        <select id="citySelect" onchange="getWeather()" class="select-css">
+          <option value="">Select a city...</option>
+        </select>
+      </form>
+      <div id="weatherInfo" class="weather-info"></div>
+    </div>
+  </div>
+
+<!------------------------------------------------------------------------------------------------------->
+
+
+<!---peepeesmol------------------------>
+<div class="bottom">
+  <h1>a</h1>
+</div>
+
+<!------------------------------------------------------------------------------------------------------->
+
+
+</body>
+<!-----------------------------------------------------CSS FOR HOMEPAGE---------------------------------->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:  sans-serif;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+
+/*  Navigation bar  *******************************************************************/
+}
+header{
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid rgba(255, 3, 3, 0.4);
+  background: rgba(0,0,0, 0.9);
+}
+header nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 85%;
+  margin: auto;
+}
+header nav .logo{
+  font-size: 35px;
+  color: #fff;
+  font-weight: 700;
+
+}
+header nav .logo span{
+  color: red;
+
+}
+header nav .nav-links a{
+  color: #fff;
+  font-size: 18px;
+  margin-left: 35px;
+  text-transform: capitalize;
+  transition: 0.4s;
+
+
+}
+header nav .nav-links a:hover{
+  color: red;
+
+}
+
+/*******************************************************************************************/
+
+/* banner **/
+.home{
+  background: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)),url("https://images4.alphacoders.com/130/1302402.jpg");
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.home h1{
+  color: #fff;
+  font-size: 80px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+/*******************************************************************************************/
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.select-css {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.3;
+  padding: 0.4em 1.4em 0.3em 0.8em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  border-radius: 0.4em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23999' d='M2 0L0 2h4zM2 5l2-2H0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7em top 50%;
+  background-size: 8px 10px;
+}
+
+.select-css::-ms-expand {
+  display: none;
+}
+
+.select-css:hover {
+  border-color: #888;
+}
+
+.select-css:focus {
+  border-color: #000000;
+  box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #e7dada;
+  outline: none;
+}
+
+.weather-info {
+  margin-top: 1em;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.content1{
+    background: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url("https://www.state.gov/wp-content/uploads/2019/04/Japan-2107x1406.jpg");
+    width: 100%;
+    padding: 100px 0px;
+    border-top: 5px solid rgba(255, 3, 3, 1);
+
+}
+.content1 p{
+  color: white;
+
+  
+  width: 100%;
+  margin: 30px ;
+  text-align: center;
+  right: 50px;
+}
+.white{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 50px;
+
+}
+.bottom{
+  background: #000000;
+}
+
+
+
+/*About japan*/
+
+.aboutjapan{
+    position: relative;
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #191919;
+    border-top: 5px solid rgba(255, 3, 3, 0.4);
+}
+.aboutjapan-text{
+    width: 550px;
+    color: aliceblue;
+}
+.main{
+    width: 1130 px;
+    max-width: 95%;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.aboutjapan-text h2{
+  font-family: 'Permanent Marker', cursive;
+    color: white;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-bottom:20px;
+}
+.aboutjapan-text h2 span{
+  font-family: 'Permanent Marker', cursive;
+  color: red;
+}
+.aboutjapan-text h5{
+    color: white;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+.aboutjapan-text p{
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom:45px;
+
+}
+
+
+
+.japanplace{
+  background: #000000;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20%;
+}
+.japanplacetitle h2{
+    font-family: 'Permanent Marker', cursive;
+    color:white;
+    font-size: 75px;
+    width: 1130px;
+    margin: 30px auto;
+    text-align: center;
+}
+.placebox{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+
+}
+.placecard{
+    height: 700px;
+    width: 500px;
+    padding: 20px 35px;
+    background-color: #191919;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.placecard img{
+    size-adjust: 10%;
+   
+}
+.placebox h5{
+    color: white;
+    font-size: 23px;
+    margin-bottom: 15px;
+
+}
+.pra p{
+    color: rgb(255, 0, 0);
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 25px;
+}
+.japanplacetitle h2 span{
+  font-family: 'Permanent Marker', cursive;
+  color: red;
+}
+
+
+</style>
+
+<!------------------------------------------------------------------------------------------------------->
+
+
+<!----------------------------------------FETCH API FOR WEATHER------------------------------------------>
+<script>
+      const url =
+        "https://api.openweathermap.org/data/2.5/group?id=1850147,1853908,1856057,1857910,1860834,1861813,1862415,1863501,1863967,1864023,1864098,1864521,1865694,1868723,1869590,1869716,1869835,1874582&appid=9fd7a449d055dba26a982a3220f32aa2";
+
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          const citySelect = document.getElementById("citySelect");
+          data.list.forEach((city) => {
+            const option = document.createElement("option");
+            option.value = city.name;
+            option.textContent = city.name;
+            citySelect.appendChild(option);
+          });
+        })
+        .catch((error) => {
+          const citySelect = document.getElementById("citySelect");
+          const option = document.createElement("option");
+          option.textContent = `Error: ${error.message}`;
+          citySelect.appendChild(option);
+        });
+</script>
+
+
+<!------------------------------------------------------------------------------------------------------>
+  
+</html>

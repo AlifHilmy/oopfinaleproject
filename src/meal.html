@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Japanese Meals</title>
+  </head>
+  <body>
+<!----------------------------navbar------------------------------------------>
+<header>
+    <nav>
+        <a href="#" class="logo">Ja<span>pan</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="meal.html">Food</a>
+        </div>
+    </nav>
+  </header>
+<!------------------------------------------------------------------------------------------------------------------>
+
+    <div class="container">
+      <div class ="meal" id = meals></div>
+    </div>
+</body>
+
+
+
+
+<!-------------------CSS FOR MEAL PAGE----------------------------------------------------------------------------------->
+<style>
+
+
+/*  Navigation bar  *******************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:  sans-serif;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+
+}
+body{
+    background: #191919;
+    
+}
+header{
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid rgba(255, 3, 3, 0.4);
+  background: rgba(0,0,0, 0.9);
+}
+header nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 85%;
+  margin: auto;
+}
+header nav .logo{
+  font-size: 35px;
+  color: #fff;
+  font-weight: 700;
+
+}
+header nav .logo span{
+  color: red;
+
+}
+header nav .nav-links a{
+  color: #fff;
+  font-size: 18px;
+  margin-left: 35px;
+  text-transform: capitalize;
+  transition: 0.4s;
+
+
+}
+header nav .nav-links a:hover{
+  color: red;
+
+}
+
+/*******************************************************************************************/
+body{
+    padding:0
+}
+
+.container {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10%;
+    font-size: 20px;
+    
+}
+.card {
+        background-color: #fff;
+        width: calc(33.33% - 20px);
+        margin-bottom: 40px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        
+
+}
+</style>
+<!------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+<!-----------------------------------FETCH MEAL API------------------------------------------------------------->
+    <script>
+      fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=Japanese")
+        .then((response) => response.json())
+        .then((data) => {
+          const container = document.querySelector(".container");
+          data.meals.forEach((meal) => {
+            fetch(
+              `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`
+            )
+              .then((response) => response.json())
+              .then((data) => {
+                const fullMeal = data.meals[0];
+                const card = document.createElement("div");
+                card.classList.add("card");
+                card.innerHTML = `
+                  <img src="${fullMeal.strMealThumb}" alt="${fullMeal.strMeal}">
+                  <h2>${fullMeal.strMeal}</h2>
+                  <p>${fullMeal.strInstructions}</p>
+                  <div class="ingredients">
+                    <h3>Ingredients:</h3>
+                    <ul>
+                      ${getIngredientsList(fullMeal)}
+                    </ul>
+                  </div>
+                `;
+                container.appendChild(card);
+              });
+          });
+        });
+
+      function getIngredientsList(meal) {
+        let ingredients = "";
+        for (let i = 1; i <= 20; i++) {
+          const ingredient = meal[`strIngredient${i}`];
+          const measure = meal[`strMeasure${i}`];
+          if (ingredient && measure) {
+            ingredients += `<li>${ingredient} - ${measure}</li>`;
+          }
+        }
+        return ingredients;
+      }
+    </script>     
+ 
+<!----------------------------------------------------------------------------------------------------------------------->
+
+
+
+</html>
+
+
+
